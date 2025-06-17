@@ -1,0 +1,60 @@
+body {
+  background-color: #edeaea; 
+}
+
+img {
+ max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+h1 {
+  color: #333; 
+  font-size: 6vw;
+}
+
+p {
+  color: #2e8b57;
+  font-size: 120%;
+}
+
+a {
+  color: #1e90ff; 
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+.container {
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+header {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}

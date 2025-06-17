@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Marketplace</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fc;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .search-bar {
+      background-color: #e0f0ea;
+      padding: 1rem;
+      text-align: center;
+    }
+    .search-bar input {
+      padding: 0.5rem;
+      width: 50%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .search-bar button {
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .listings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .item-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease-in-out;
+    }
+    .item-card:hover {
+      transform: translateY(-5px);
+    }
+    .item-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .item-card h3, .item-card p {
+      margin: 0.5rem 1rem;
+    }
+    .item-card button {
+      margin: 1rem;
+      padding: 0.5rem;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .item-card button:hover {
+      background-color: #0055aa;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #003366;
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Campus Marketplace</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Post Item</a>
+        <a href="#">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search textbooks or dorm items..." />
+    <button onclick="searchItems()">Search</button>
+  </section>
+
+  <main class="listings" id="listingGrid">
+    <div class="item-card">
+      <img src="images/book.jpg" alt="Textbook" />
+      <h3>Calculus Textbook</h3>
+      <p>$30 - Gently used</p>
+      <button onclick="alert('Message sent to seller!')">Contact Seller</button>
+    </div>
+    <div class="item-card">
+      <img src="images/microwave.jpg" alt="Microwave" />
+      <h3>Mini Microwave</h3>
+      <p>$25 - Works great</p>
+      <button onclick="alert('Message sent to seller!')">Contact Seller</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Campus Marketplace</p>
+  </footer>
+
+  <script>
+    function searchItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.item-card');
+      cards.forEach(card => {
+        const title = card.querySelector('h3').innerText.toLowerCase();
+        card.style.display = title.includes(input) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
